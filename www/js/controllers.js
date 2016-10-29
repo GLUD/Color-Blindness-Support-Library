@@ -1,20 +1,19 @@
 angular.module('starter.controllers', [])
-.run(function($rootScope){
-  $rootScope.stylePath='css/ColorBlind.min.css';
+
+.controller('StyleCtrl', function($rootScope) {
+  console.log('Setting default style');
+  $rootScope.activeMode = false;
+  $rootScope.activeStyle = 'css/ionic.app.min.css';
+  console.log('ActiveStyle:'+$rootScope.activeStyle);
 })
 
 .controller('DashCtrl', function($scope,$rootScope) {
-  $rootScope.stylePath = 'css/ColorBlind.min.css';
-  $scope.settings = {
-    daltonic: true
-  };
-
-  $scope.toggleMode = function(){
-    console.log("Daltonic mode = "+$scope.settings.daltonic);
-    if($scope.settings.daltonic==true){
-      $rootScope.stylePath = 'css/ColorBlind.min.css';
+  $rootScope.toggleMode = function(activeMode){
+    console.log('activeMode: '+activeMode);
+    if(activeMode){
+      $rootScope.activeStyle = 'css/ColorBlind.min.css';
     }else{
-      $rootScope.stylePath = 'css/ionic.app.min.css';
+      $rootScope.activeStyle = 'css/ionic.app.min.css';
     }
   }
 })

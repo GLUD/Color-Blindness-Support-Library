@@ -44,9 +44,7 @@
     <button class="button icon-left ion-person-stalker button-positive">Contacts</button>
     <a class="button icon-right ion-social-whatsapp-outline button-energized">Whatsapp</a>
 
-    <ion-toggle  ng-model="settings.daltonic" ng-change="toggleMode()">
-        Daltonic Mode
-    </ion-toggle>
+    <ion-toggle ng-model="activeMode" ng-change="toggleMode(activeMode)" toggle-class="toggle-calm">Daltonic Support</ion-toggle>
 
 
   </ion-content>
