@@ -24,6 +24,86 @@ gulp.task('sass', function(done) {
     .pipe(rename({ extname: '.min.css' }))
     .pipe(gulp.dest('./www/css/'))
 
+      gulp.src('./scss/protanopia.scss')
+        .pipe(sass())
+        .on('error', sass.logError)
+        .pipe(gulp.dest('./www/css/'))
+        .pipe(minifyCss({
+          keepSpecialComments: 0
+      }))
+        .pipe(rename({ extname: '.min.css' }))
+        .pipe(gulp.dest('./www/css/'))
+
+      gulp.src('./scss/protanomaly.scss')
+        .pipe(sass())
+        .on('error', sass.logError)
+        .pipe(gulp.dest('./www/css/'))
+        .pipe(minifyCss({
+          keepSpecialComments: 0
+      }))
+        .pipe(rename({ extname: '.min.css' }))
+        .pipe(gulp.dest('./www/css/'))
+
+      gulp.src('./scss/deuteranopia.scss')
+        .pipe(sass())
+        .on('error', sass.logError)
+        .pipe(gulp.dest('./www/css/'))
+        .pipe(minifyCss({
+          keepSpecialComments: 0
+      }))
+        .pipe(rename({ extname: '.min.css' }))
+        .pipe(gulp.dest('./www/css/'))
+
+      gulp.src('./scss/deuteranomaly.scss')
+        .pipe(sass())
+        .on('error', sass.logError)
+        .pipe(gulp.dest('./www/css/'))
+        .pipe(minifyCss({
+          keepSpecialComments: 0
+      }))
+        .pipe(rename({ extname: '.min.css' }))
+        .pipe(gulp.dest('./www/css/'))
+
+      gulp.src('./scss/tritanopia.scss')
+        .pipe(sass())
+        .on('error', sass.logError)
+        .pipe(gulp.dest('./www/css/'))
+        .pipe(minifyCss({
+          keepSpecialComments: 0
+      }))
+        .pipe(rename({ extname: '.min.css' }))
+        .pipe(gulp.dest('./www/css/'))
+
+      gulp.src('./scss/tritanomaly.scss')
+        .pipe(sass())
+        .on('error', sass.logError)
+        .pipe(gulp.dest('./www/css/'))
+        .pipe(minifyCss({
+          keepSpecialComments: 0
+      }))
+        .pipe(rename({ extname: '.min.css' }))
+        .pipe(gulp.dest('./www/css/'))
+
+      gulp.src('./scss/achromatopsia.scss')
+        .pipe(sass())
+        .on('error', sass.logError)
+        .pipe(gulp.dest('./www/css/'))
+        .pipe(minifyCss({
+          keepSpecialComments: 0
+      }))
+        .pipe(rename({ extname: '.min.css' }))
+        .pipe(gulp.dest('./www/css/'))
+
+      gulp.src('./scss/achromatomaly.scss')
+        .pipe(sass())
+        .on('error', sass.logError)
+        .pipe(gulp.dest('./www/css/'))
+        .pipe(minifyCss({
+          keepSpecialComments: 0
+      }))
+        .pipe(rename({ extname: '.min.css' }))
+        .pipe(gulp.dest('./www/css/'))
+
   gulp.src('./scss/ionic.app.scss')
     .pipe(sass())
     .on('error', sass.logError)
