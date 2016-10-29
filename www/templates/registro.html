@@ -1,0 +1,25 @@
+<ion-view hide-nav-bar="false" view-title="Registro">
+  <ion-content class="registro">
+
+    <form ng-submit="validar(datos)">
+      <label>NOMBRE</label>
+      <div class="item item-input-inset">
+      <label class="item item-input-wrapper"><input ng-model="datos.nombre" type="text"></input></label>
+      </div>
+      <label>EMAIL</label>
+      <div class="item item-input-inset">
+      <label class="item item-input-wrapper"><input ng-model="datos.email" type="text"></input></label>
+      </div>
+      <label>CONTRASEÑA</label>
+      <div class="item item-input-inset">
+      <label class="item item-input-wrapper"><input ng-model="datos.contrasena" type="text"></input></label>
+      </div>
+      <br>
+      <br>
+      <div align-content="center">
+      <center><button type="submit" class="button button-balanced">¡Vamo a hacerlo!</button></center>
+      </div>
+    </form>
+
+  </ion-content>
+</ion-view>

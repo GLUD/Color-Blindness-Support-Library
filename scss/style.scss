@@ -1,0 +1,33 @@
+.inicio{
+    padding: 10%;
+    padding-top: 5%;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    text-align: center;
+
+    .text{
+      text-align: justify;
+    }
+
+    .button{
+      width: 70%;
+    }
+}
+
+.registro{
+  height: 100%;
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  align-content: center;
+  text-align: left;
+
+  .div{
+    -webkit-flex: 6;
+  }
+
+  .button{
+    -webkit-flex: 2;
+    width: 70%;
+  }
+}

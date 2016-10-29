@@ -1,1 +1,17 @@
-/* Empty. Add your own CSS if you like */
+.inicio {
+  padding: 10%;
+  padding-top: 15%;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  text-align: center; }
+  .inicio .text {
+    text-align: justify; }
+  .inicio .button {
+    width: 70%; }
+
+.registro {
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  align-content: center;
+  text-align: left; }

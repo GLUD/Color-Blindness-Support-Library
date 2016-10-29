@@ -1,44 +1,59 @@
 angular.module('starter.controllers', [])
 
-.controller('StyleCtrl', function($rootScope) {
+.controller('StyleCtrl', function($rootScope,$scope,$ionicModal) {
   console.log('Setting default style');
-  $rootScope.activeMode = false;
-  $rootScope.activeStyle = 'css/ionic.app.min.css';
-  console.log('ActiveStyle:'+$rootScope.activeStyle);
-})
 
-.controller('DashCtrl', function($scope,$rootScope) {
-  $rootScope.toggleMode = function(activeMode){
-    console.log('activeMode: '+activeMode);
-    if(activeMode){
-      $rootScope.activeStyle = 'css/ColorBlind.min.css';
-    }else{
-      $rootScope.activeStyle = 'css/ionic.app.min.css';
+  $rootScope.activeMode = false;
+  $rootScope.activeStyle='css/ionic.app.min.css';
+
+  $rootScope.applyFilter = function(filtro){
+    $rootScope.activeStyle = 'css/'+filtro+'min.css';
+  };
+  console.log('ActiveStyle:'+$rootScope.activeStyle);
+
+
+  $ionicModal.fromTemplateUrl('ajustes.html',{
+    scope: $scope,
+    animation: 'slide-in-down'
+  }).then(function(modal){
+    $scope.modal = modal;
+  });
+
+  $scope.openModal = function() {
+    $scope.modal.show();
+  };
+
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
+
+  //Opciónes de filtro
+  $scope.choice;
+  $scope.accionar = function(choice){
+    switch (choice) {
+      case "protanopia":
+        applyFilter("protanopia");
+
+        break;
+      default:
+
     }
   }
+
 })
 
-.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
+.controller('InicioCtrl',function($rootScope,$scope,$ionicModal){
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
-
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
+.controller('RegistroCtrl',function($scope){
+  console.log("Registrandose");
+  $scope.datos={};
+  $scope.validar=function(datos){
+    if(datos.nombre && datos.email && datos.contrasena){
+      console.log("Todo bien, todo bonito, fuicioso");
+      $state.go('registro_finalizado')
+    }else{
+      alert("Todos los campos son obligatorios");
+    }
   };
 });

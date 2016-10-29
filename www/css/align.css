@@ -1,0 +1,19 @@
+/* Empty. Add your own CSS if you like */
+.inicio{
+  padding: 10%;
+  padding-top: 15%;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  text-align: center;
+}
+.inicio .button{
+  width: 70%;
+}
+.inicio .text{
+  text-align: justify;
+}
+
+.registro .text{
+  text-align: justify;
+}
